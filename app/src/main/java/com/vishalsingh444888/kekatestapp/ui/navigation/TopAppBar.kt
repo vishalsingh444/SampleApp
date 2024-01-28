@@ -2,6 +2,7 @@ package com.vishalsingh444888.kekatestapp.ui.navigation
 
 import android.provider.MediaStore.Images
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -40,13 +41,13 @@ import com.vishalsingh444888.kekatestapp.ui.theme.AntiFlashWhite
 @Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBar() {
+fun TopAppBar(onClick: () -> Unit = {}) {
     Row(modifier = Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
         var searchValue by remember{ mutableStateOf("") }
         Image(
             painter = painterResource(id = R.drawable.person_image),
             contentDescription = null,
-            modifier = Modifier.clip(CircleShape).size(40.dp),
+            modifier = Modifier.clip(CircleShape).size(40.dp).clickable { onClick() },
             contentScale = ContentScale.Crop
         )
         Spacer(Modifier.width(16.dp))
