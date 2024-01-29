@@ -75,13 +75,15 @@ fun BottomNavBar(navController: NavController) {
                     Icon(
                         painter = painterResource(id = item.icon),
                         contentDescription = item.label,
+                        tint = if(item.route == currentRoute) Amethyst else Color.Gray
 
                     )
                 },
                 label = {
-                    Text(text = item.label, fontSize = 12.sp, fontWeight = if(item.route == currentRoute) FontWeight.Bold else FontWeight.Normal  )
+                    Text(text = item.label, fontSize = 12.sp, fontWeight = if(item.route == currentRoute) FontWeight.Bold else FontWeight.Normal, color = if(item.route == currentRoute) Amethyst else Color.Gray )
                 },
-                selectedContentColor = Amethyst
+                selectedContentColor = Amethyst,
+                unselectedContentColor = Color.Gray
 
             )
         }

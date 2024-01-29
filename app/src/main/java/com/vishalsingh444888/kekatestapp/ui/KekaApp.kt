@@ -5,6 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ModalDrawerSheet
@@ -16,7 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -59,11 +60,11 @@ fun KekaApp() {
     val scope = rememberCoroutineScope()
     val navController = rememberNavController()
     var selectedItemIndex by rememberSaveable {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
     ModalNavigationDrawer(
         drawerContent = {
-            ModalDrawerSheet {
+            ModalDrawerSheet(modifier = Modifier.width(280.dp)) {
                 Spacer(modifier = Modifier.height(16.dp))
                 items.forEachIndexed{index,item->
                     NavigationDrawerItem(

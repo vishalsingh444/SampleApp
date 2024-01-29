@@ -1,5 +1,6 @@
 package com.vishalsingh444888.kekatestapp.ui.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -20,14 +21,18 @@ import com.vishalsingh444888.kekatestapp.ui.theme.Amethyst
 
 @Composable
 fun HomeScreen() {
-    Column(modifier = Modifier
-        .padding(top = 100.dp, start = 16.dp, end = 16.dp, bottom = 60.dp)
-        .verticalScroll(
-            rememberScrollState()
-        )) {
+    Column(
+        modifier = Modifier
+            .padding(top = 100.dp, start = 16.dp, end = 16.dp, bottom = 60.dp)
+            .verticalScroll(
+                rememberScrollState()
+            )
+    ) {
         ListOfFeatures()
+
         Spacer(Modifier.height(16.dp))
         CardComponent()
+
         Spacer(Modifier.height(16.dp))
         EmployeeList(heading = "Off this week")
         Spacer(modifier = Modifier.height(16.dp))
@@ -35,11 +40,10 @@ fun HomeScreen() {
         Spacer(modifier = Modifier.height(16.dp))
         Announcements()
         Spacer(modifier = Modifier.height(18.dp))
-        Text(
-            text = "See all announcements",
+        Text(text = "See all announcements",
             fontSize = 12.sp,
-            color = Amethyst
-        )
+            color = Amethyst,
+            modifier = Modifier.clickable { })
         Spacer(modifier = Modifier.height(16.dp))
         UpcomingHoliday()
     }

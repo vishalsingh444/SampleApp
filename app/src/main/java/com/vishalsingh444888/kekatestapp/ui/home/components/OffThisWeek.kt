@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vishalsingh444888.kekatestapp.R
 
-@Preview
 @Composable
 fun EmployeeList(heading: String) {
     Column {
@@ -48,7 +47,7 @@ fun EmployeeButton() {
             contentDescription = null,
             modifier = Modifier
                 .clip(CircleShape)
-                .size(40.dp),
+                .size(45.dp),
             contentScale = ContentScale.Crop
         )
         Spacer(Modifier.height(8.dp))

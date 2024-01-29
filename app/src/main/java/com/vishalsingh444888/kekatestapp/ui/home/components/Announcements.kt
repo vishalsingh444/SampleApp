@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -47,6 +48,7 @@ fun Announcements() {
                     .size(50.dp),
                 contentScale = ContentScale.Crop
             )
+            Spacer(modifier = Modifier.width(8.dp))
             Column {
                 Text(text = "Neha Deshpande", fontWeight = FontWeight.Bold, fontSize = 12.sp)
                 Text(text = "made an announcement", fontSize = 12.sp, color = Color.Gray)
